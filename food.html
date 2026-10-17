@@ -54,6 +54,41 @@ h2.sec{margin:3.5rem 0 0;font:400 clamp(1.8rem,3.6vw,2.6rem)/1 var(--font-serif)
 .contact-list .v{font:400 clamp(1.3rem,2.6vw,1.9rem)/1.2 var(--font-serif);overflow-wrap:anywhere}
 .copy{border:1px solid var(--green-line);background:transparent;color:var(--cream);border-radius:999px;padding:.35rem .9rem;font-size:.85rem}
 .copy:hover{background:var(--cream);color:var(--ink)}
+.fav{border:1.5px solid var(--amber);border-radius:16px;padding:1.1rem 1.3rem;background:rgba(243,181,68,.07);max-width:56ch}
+.fav h3{margin:.4rem 0 .2rem;font:400 clamp(1.6rem,3vw,2.2rem)/1.1 var(--font-serif)}
+.fav p{margin:0;color:var(--cream-dim)}
+.badge{display:inline-block;background:var(--amber);color:var(--ink);font:600 .7rem/1 var(--font-body);text-transform:uppercase;letter-spacing:.06em;border-radius:999px;padding:.35em .8em}
+.sub{margin:2.2rem 0 .8rem;font:400 1.6rem/1 var(--font-serif);color:var(--amber)}
+.note{margin:0 0 1rem;color:var(--cream-dim)}
+.dishes{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:.8rem}
+.dish{border:1px dashed var(--green-line);border-radius:12px;padding:.85rem 1rem;background:rgba(246,235,211,.04);transition:border-color .2s,transform .25s}
+.dish:hover{border-color:var(--cream);transform:translateY(-2px)}
+.dish h3{margin:0;font:500 1.02rem/1.3 var(--font-display)}
+.dish p{margin:.3rem 0 0;font-size:.9rem;color:var(--cream-dim)}
+.nope{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;max-width:56ch;color:var(--cream-dim)}
+.nope li{border-left:3px solid var(--orange);padding:.15rem 0 .15rem .8rem}
+.nope b{color:var(--cream)}
+.coffee-side{position:sticky;top:76px;display:grid;gap:1.4rem;justify-items:center}
+.cupwrap{width:min(100%,260px);transform:rotate(-3deg);filter:drop-shadow(0 22px 26px rgba(0,0,0,.5));transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.cupwrap:hover{transform:rotate(2deg) scale(1.04)}
+.cup{display:block;width:100%;height:auto}
+.recipe{background:var(--cream);color:var(--ink);border-radius:4px;padding:1rem 1.2rem 1.1rem;max-width:300px;transform:rotate(2deg);box-shadow:0 14px 28px rgba(0,0,0,.45);background-image:repeating-linear-gradient(transparent 0 25px,rgba(15,46,36,.1) 25px 26px)}
+.recipe h5{margin:0 0 .4rem;font:400 1.6rem/1 var(--font-serif);color:var(--orange)}
+.recipe ul{margin:0;padding-left:1.1rem;line-height:26px;font-size:.95rem}
+@media (max-width:760px){.coffee-side{position:static}}
+.foodpg{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem clamp(24px,5vw,72px);align-items:start}
+@media (max-width:760px){.foodpg{grid-template-columns:minmax(0,1fr)}}
+.subrow{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin:2.2rem 0 .8rem}
+.subrow .sub{margin:0}
+.snaps{display:flex;gap:.9rem;align-items:flex-end}
+.snaps img{display:block;height:clamp(64px,9vw,92px);width:auto;filter:drop-shadow(0 10px 14px rgba(0,0,0,.5));transform:rotate(-4deg);transition:transform .3s}
+.snaps img:nth-child(even){transform:rotate(4deg)}
+.snaps img:hover{transform:rotate(0) scale(1.12)}
+.coffee-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:1.2rem;align-items:start;max-width:760px}
+.coffee-row .recipe{justify-self:start;transform:rotate(1.5deg);margin:0}
+@media (max-width:640px){.coffee-row{grid-template-columns:minmax(0,1fr)}}
+.beli{display:inline-block;margin:0 0 1.2rem;border:1.5px solid var(--amber);border-radius:999px;padding:.35em 1em;font-size:.95rem;color:var(--cream-dim)}
+.beli strong{color:var(--amber);font-weight:600}
 .empty{color:var(--cream-dim);font-style:italic}
 /* item pages */
 .item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
@@ -76,4 +111,4 @@ dt{font-weight:600}dd{margin:0;color:var(--cream-dim)}
 .gal{display:flex;flex-wrap:wrap;gap:clamp(16px,4vw,48px);align-items:center;justify-content:center;margin:0 0 1rem}
 .gal img{display:block;width:auto;height:clamp(120px,22vw,230px);filter:drop-shadow(0 14px 22px rgba(0,0,0,.55))}
 .gal img:nth-child(odd){transform:rotate(-4deg)}.gal img:nth-child(even){transform:rotate(3deg)}
-</style></head><body><div class="pg"><nav class="nav" aria-label="Main"><a href="index.html#home" aria-current="page">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="recents.html">Recents</a><a href="contact.html">Contact</a></nav><h1 class="title">Food &amp; coffee</h1><p class="lede">Things I cook, order and queue for. Entries marked with brackets are sample text for you to replace.</p><div class="gal"><img src="img/coffee.png" alt=""><img src="img/noodles.png" alt=""><img src="img/skillet.png" alt=""><img src="img/taco.png" alt=""></div><h2 class="sec">Coffee</h2><div class="row"><div class="when">[Order]</div><div><h3>Iced latte</h3><p class="org">[Favorite cafe]</p><p>Sample text. Replace with your usual order and where you get it.</p><ul class="tags"><li>Coffee</li></ul></div></div><h2 class="sec">Cooking</h2><div class="row"><div class="when">[Dish]</div><div><h3>Eggs in a cast-iron skillet</h3><p class="org">Home kitchen</p><p>Sample text. Replace with the recipe or story behind it.</p><ul class="tags"><li>Cooking</li></ul></div></div><div class="row"><div class="when">[Dish]</div><div><h3>Noodles</h3><p class="org">[Where or how]</p><p>Sample text. Replace with a short description of what you did and what came of it.</p><ul class="tags"><li>Noodles</li></ul></div></div><h2 class="sec">Takeout</h2><div class="row"><div class="when">[Order]</div><div><h3>Taco Bell run</h3><p class="org">[Where]</p><p>Sample text. Replace with your go-to order and why it is a classic.</p><ul class="tags"><li>Takeout</li></ul></div></div></div></body></html>
+</style></head><body><div class="pg"><nav class="nav" aria-label="Main"><a href="index.html#home" aria-current="page">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="recents.html">Recents</a><a href="contact.html">Contact</a></nav><h1 class="title">Food &amp; coffee</h1><p class="lede">Vegetarian home cook, and a devoted iced coffee drinker.</p><p class="beli">Follow me on Beli <strong>@kavya3008</strong></p><div class="foodpg"><div style="grid-column:1/-1"><div class="subrow"><h3 class="sub">Coffee order</h3><span class="snaps"><img src="img/coffee.png" alt="Iced coffee" loading="lazy"></span></div><div class="coffee-row"><div class="fav"><span class="badge">Favorite</span><h3>Iced brown sugar shaken espresso</h3><p>My favorite coffee.</p></div><div class="recipe"><h5>At home</h5><ul><li>1.5 shots of espresso</li><li>Coffee Mate Toll House Brown Butter Chocolate Chip Cookie creamer</li></ul></div></div><div class="subrow"><h3 class="sub">What I cook</h3><span class="snaps"><img src="img/skillet.png" alt="Skillet with eggs" loading="lazy"></span></div><p class="note">I’m vegetarian, and these are the things I keep making.</p><div class="dishes"><div class="dish"><h3>Tofu fried rice bowl</h3><p>With edamame, green beans and broccoli, and baby corn sometimes. Finished with Ching’s Schezwan sauce, which reminds me of home.</p></div><div class="dish"><h3>Scrambled eggs &amp; avocado toast</h3><p>Something I love making.</p></div><div class="dish"><h3>Caramelized onion pasta</h3><p>Sweet, slow-cooked onions tossed through pasta.</p></div><div class="dish"><h3>Masala khichdi</h3><p>Comforting rice and lentils, with garam masala added.</p></div><div class="dish"><h3>Pesto grilled cheese</h3><p>Melty cheese and basil pesto, grilled until golden.</p></div><div class="dish"><h3>A really good corn dish</h3><p>Corn with sour cream and spices.</p></div><div class="dish"><h3>Quesadillas</h3><p>Cheesy and crisp, with Trader Joe’s hot salsa.</p></div></div><div class="subrow"><h3 class="sub">Takeout orders</h3><span class="snaps"><img src="img/noodles.png" alt="Noodles on chopsticks" loading="lazy"><img src="img/taco.png" alt="Taco Bell takeout sticker" loading="lazy"></span></div><div class="dishes"><div class="dish"><h3>Khao suey noodles</h3><p>Coconut curry noodles with crunchy toppings.</p></div><div class="dish"><h3>Red Thai curry</h3><p>Creamy, spicy coconut curry.</p></div><div class="dish"><h3>Paneer butter masala</h3><p>Paneer in a rich, buttery gravy, with garlic naan.</p></div><div class="dish"><h3>Taco Bell black bean crunchwrap</h3><p>Black beans and a crunchy tostada, wrapped in a tortilla.</p></div></div><h3 class="sub">Not for me</h3><ul class="nope"><li><b>Raw tomatoes.</b> I hate them.</li><li><b>Cottage cheese.</b> I’m trying to get into it, but the texture creeps me out.</li></ul></div></div></div></body></html>

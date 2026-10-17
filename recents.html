@@ -80,6 +80,90 @@ h2.sec{margin:3.5rem 0 0;font:400 clamp(1.8rem,3.6vw,2.6rem)/1 var(--font-serif)
 .js .feed .pics img,.js .feed>div>*{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .8s cubic-bezier(.16,.84,.26,1)}
 .js .feed.in .pics img,.js .feed.in>div>*{opacity:1;transform:rotate(var(--rot,0deg))}
 .js .feed.in .pics img:hover{transform:rotate(0) scale(1.12)}
+.shows{margin:1.6rem 0 0}
+.polas{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:clamp(20px,3vw,34px) clamp(16px,2.4vw,28px)}
+.pola{margin:0;background:var(--cream);color:var(--ink);padding:10px 10px 14px;border-radius:3px;box-shadow:0 14px 28px rgba(0,0,0,.45);transform:rotate(var(--r,-1.5deg));transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.pola:nth-child(3n+2){--r:1.8deg}.pola:nth-child(3n){--r:-.8deg}.pola:nth-child(4n){--r:1.2deg}
+.pola:hover{transform:rotate(0) scale(1.04);box-shadow:0 22px 40px rgba(0,0,0,.55);z-index:3;position:relative}
+.pola .ph{aspect-ratio:1/1;overflow:hidden;background:#0a1c15;display:grid;place-items:center}
+.pola .ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.pola .soon{font:400 3rem/1 var(--font-serif);color:var(--cream-dim)}
+.pola figcaption{display:flex;flex-direction:column;gap:.1rem;padding:.7rem .2rem 0}
+.pola .a{font:600 1.05rem/1.2 var(--font-display);display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .5rem}
+.pola .a em{font:600 .58rem/1 var(--font-body);font-style:normal;text-transform:uppercase;letter-spacing:.06em;background:var(--orange);color:#fff;border-radius:999px;padding:.3em .7em}
+.pola .d{font:500 .74rem/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#6b6a55;text-transform:uppercase;letter-spacing:.03em}
+.pola .v{font-size:.85rem;color:#3d4a42}
+.feed.wide{grid-template-columns:minmax(0,1fr)}
+.rail-wrap{position:relative;margin-top:1.4rem}
+.rail{overflow-x:auto;scroll-snap-type:x proximity;padding:0 .5rem 1.6rem;scrollbar-width:thin;scrollbar-color:var(--green-line) transparent;cursor:grab}
+.rail.drag{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.rail:focus-visible{outline-offset:6px}
+.strip{position:relative;display:flex;gap:clamp(18px,2.6vw,32px);width:max-content;padding:14px 1rem 18px}
+.strip .pola{flex:0 0 clamp(210px,24vw,260px);scroll-snap-align:start;transform:rotate(var(--r,-1.5deg));margin-top:6px;animation:none}
+.strip .pola:hover{transform:rotate(0) scale(1.03);position:relative}
+.strip .pola{position:relative}
+.rail-btn{position:absolute;top:50%;z-index:6;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1.5px solid var(--green-line);background:rgba(10,28,21,.88);color:var(--cream);font-size:1.5rem;line-height:1;display:grid;place-items:center}
+.rail-btn:hover{background:var(--cream);color:var(--ink)}
+#rprev{left:-10px}#rnext{right:-10px}
+.rail-hint{margin:.2rem 0 0;font-size:.85rem;color:var(--cream-dim)}
+@media (max-width:760px){.rail-btn{display:none}}
+.fav{border:1.5px solid var(--amber);border-radius:16px;padding:1.1rem 1.3rem;background:rgba(243,181,68,.07);max-width:56ch}
+.fav h3{margin:.4rem 0 .2rem;font:400 clamp(1.6rem,3vw,2.2rem)/1.1 var(--font-serif)}
+.fav p{margin:0;color:var(--cream-dim)}
+.badge{display:inline-block;background:var(--amber);color:var(--ink);font:600 .7rem/1 var(--font-body);text-transform:uppercase;letter-spacing:.06em;border-radius:999px;padding:.35em .8em}
+.sub{margin:2.2rem 0 .8rem;font:400 1.6rem/1 var(--font-serif);color:var(--amber)}
+.note{margin:0 0 1rem;color:var(--cream-dim)}
+.dishes{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:.8rem}
+.dish{border:1px dashed var(--green-line);border-radius:12px;padding:.85rem 1rem;background:rgba(246,235,211,.04);transition:border-color .2s,transform .25s}
+.dish:hover{border-color:var(--cream);transform:translateY(-2px)}
+.dish h3{margin:0;font:500 1.02rem/1.3 var(--font-display)}
+.dish p{margin:.3rem 0 0;font-size:.9rem;color:var(--cream-dim)}
+.nope{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;max-width:56ch;color:var(--cream-dim)}
+.nope li{border-left:3px solid var(--orange);padding:.15rem 0 .15rem .8rem}
+.nope b{color:var(--cream)}
+.coffee-side{position:sticky;top:76px;display:grid;gap:1.4rem;justify-items:center}
+.cupwrap{width:min(100%,260px);transform:rotate(-3deg);filter:drop-shadow(0 22px 26px rgba(0,0,0,.5));transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.cupwrap:hover{transform:rotate(2deg) scale(1.04)}
+.cup{display:block;width:100%;height:auto}
+.recipe{background:var(--cream);color:var(--ink);border-radius:4px;padding:1rem 1.2rem 1.1rem;max-width:300px;transform:rotate(2deg);box-shadow:0 14px 28px rgba(0,0,0,.45);background-image:repeating-linear-gradient(transparent 0 25px,rgba(15,46,36,.1) 25px 26px)}
+.recipe h5{margin:0 0 .4rem;font:400 1.6rem/1 var(--font-serif);color:var(--orange)}
+.recipe ul{margin:0;padding-left:1.1rem;line-height:26px;font-size:.95rem}
+@media (max-width:760px){.coffee-side{position:static}}
+.subrow{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin:2.2rem 0 .8rem}
+.subrow .sub{margin:0}
+.snaps{display:flex;gap:.9rem;align-items:flex-end}
+.snaps img{display:block;height:clamp(64px,9vw,92px);width:auto;filter:drop-shadow(0 10px 14px rgba(0,0,0,.5));transform:rotate(-4deg);transition:transform .3s}
+.snaps img:nth-child(even){transform:rotate(4deg)}
+.snaps img:hover{transform:rotate(0) scale(1.12)}
+.coffee-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:1.2rem;align-items:start;max-width:760px}
+.coffee-row .recipe{justify-self:start;transform:rotate(1.5deg);margin:0}
+@media (max-width:640px){.coffee-row{grid-template-columns:minmax(0,1fr)}}
+.beli{display:inline-block;margin:0 0 1.2rem;border:1.5px solid var(--amber);border-radius:999px;padding:.35em 1em;font-size:.95rem;color:var(--cream-dim)}
+.beli strong{color:var(--amber);font-weight:600}
+.trips{list-style:none;max-width:760px;margin:1.8rem 0 0;padding:0 0 0 1.6rem;border-left:2px solid var(--green-line);display:grid;gap:1.4rem}
+.trip{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:1rem 1.4rem;align-items:start;padding:1rem 1.1rem;border:1px solid var(--green-line);border-radius:16px;background:rgba(246,235,211,.04);transition:border-color .25s,transform .3s}
+.trip:hover{border-color:var(--cream);transform:translateX(4px)}
+.trip::before{content:"";position:absolute;left:calc(-1.6rem - 7px);top:1.7rem;width:12px;height:12px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px var(--green-deep)}
+.trip.next{border:1.5px dashed var(--amber)}
+.trip.next::before{background:var(--orange)}
+.trip .when{display:inline-block;margin-right:.6rem;font:500 .8rem/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--amber);text-transform:uppercase;letter-spacing:.03em}
+.trip h3{margin:.3rem 0 0;font:400 clamp(1.5rem,2.6vw,1.9rem)/1.1 var(--font-serif)}
+.trip .sub{margin:.15rem 0 .6rem;color:var(--cream-dim);font-weight:500}
+.trip p:not(.sub){margin:0 0 .8rem;color:var(--cream-dim);max-width:56ch}
+.trip .tags{margin-top:.2rem}
+.tphoto{position:relative;display:block;width:100%;padding:0;border:0;color:inherit;font:inherit;background:var(--cream);border-radius:3px;box-shadow:0 12px 24px rgba(0,0,0,.45);transform:rotate(2deg);aspect-ratio:4/5;overflow:hidden;transition:transform .3s}
+.tphoto::after{content:"";position:absolute;inset:0;border:8px solid var(--cream);border-bottom-width:14px;pointer-events:none}
+.tphoto.multi{cursor:pointer}
+.tphoto.multi:hover{transform:rotate(0) scale(1.03)}
+.tphoto .count{position:absolute;right:14px;bottom:20px;z-index:2;background:rgba(10,28,21,.8);color:var(--cream);font:600 .7rem/1 var(--font-body);border-radius:999px;padding:.35em .7em}
+.trip:nth-child(even) .tphoto{transform:rotate(-2deg)}
+.trip:nth-child(even) .tphoto.multi:hover{transform:rotate(0) scale(1.03)}
+.tphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;opacity:0;transition:opacity .45s ease}
+.tphoto img.on{opacity:1}
+.tphoto .soon{position:absolute;inset:8px 8px 14px;flex:1;display:grid;place-content:center;gap:.4rem;text-align:center;padding:.6rem;background:repeating-linear-gradient(135deg,rgba(15,46,36,.06) 0 8px,transparent 8px 16px),#e9dcbc;color:var(--ink)}
+.tphoto .soon b{font:400 1.35rem/1.1 var(--font-serif)}
+.tphoto .soon i{font:italic 400 .8rem/1 var(--font-body);color:#6b6a55}
+@media (max-width:640px){.trip{grid-template-columns:minmax(0,1fr)}.tphoto{width:170px}}
 .empty{color:var(--cream-dim);font-style:italic}
 /* item pages */
 .item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
@@ -98,12 +182,24 @@ dt{font-weight:600}dd{margin:0;color:var(--cream-dim)}
   .arch{max-width:260px}
   .contact-list li{grid-template-columns:minmax(0,1fr) auto}.contact-list .k{grid-column:1/-1}
 }
-</style></head><body><div class="pg"><nav class="nav" aria-label="Main"><a href="index.html#home">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="recents.html" aria-current="page">Recents</a><a href="contact.html">Contact</a></nav><h1 class="title">Recents</h1><p class="lede">What I’ve been up to lately. Scroll, or jump to a section.</p><nav class="chips" aria-label="Sections"><a href="#concerts">Concerts &amp; music</a><a href="#food">Food &amp; coffee</a><a href="#places">Places</a><a href="#life">Little things</a></nav><section class="feed" id="concerts"><div><h2>Concerts &amp; music</h2><p class="lede">Live shows, records and whatever is on repeat.</p><div class="entry"><h3>Harry Styles at Madison Square Garden</h3><span class="when">Sep 4, 2026</span><p>Night 5 of the New York run, with Jamie xx as the special guest.</p></div><a class="more" href="music.html">Full page →</a></div><div class="pics"><img src="img/harry-ticket.png" alt="Harry Styles ticket" loading="lazy"><img src="img/record.png" alt="Vinyl record" loading="lazy"></div></section><section class="feed" id="food"><div><h2>Food &amp; coffee</h2><p class="lede">Things I cook, order and queue for.</p><a class="more" href="food.html">Full page →</a></div><div class="pics"><img src="img/coffee.png" alt="Iced coffee" loading="lazy"><img src="img/skillet.png" alt="Skillet with eggs" loading="lazy"><img src="img/noodles.png" alt="Noodles on chopsticks" loading="lazy"><img src="img/taco.png" alt="Taco Bell takeout sticker" loading="lazy"></div></section><section class="feed" id="places"><div><h2>Places</h2><p class="lede">Recent trips and places I keep going back to.</p><div class="entry"><h3>Central Park</h3><span class="when">Mar 2026</span><p>A March afternoon in New York, with the polaroid to prove it.</p></div></div><div class="pics"><img src="img/polaroid.png" alt="Central Park polaroid" loading="lazy"><img src="img/ny-booth.png" alt="New York photo booth strips" loading="lazy"><img src="img/la-jolla.png" alt="La Jolla postcard" loading="lazy"></div></section><section class="feed" id="life"><div><h2>Little things</h2><p class="lede">Small things I like.</p></div><div class="pics"><img src="img/daisy.png" alt="Daisies" loading="lazy"><img src="img/lily.png" alt="Pink lily" loading="lazy"><img src="img/booth.png" alt="Photo booth strip" loading="lazy"></div></section></div><script>
+</style></head><body><div class="pg"><nav class="nav" aria-label="Main"><a href="index.html#home">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="recents.html" aria-current="page">Recents</a><a href="contact.html">Contact</a></nav><h1 class="title">Recents</h1><p class="lede">What I’ve been up to lately. Scroll, or jump to a section.</p><nav class="chips" aria-label="Sections"><a href="#concerts">Concerts &amp; music</a><a href="#food">Food &amp; coffee</a><a href="#places">Trips</a><a href="#life">Little things</a></nav><section class="feed wide" id="concerts"><div><h2>Concerts &amp; music</h2><p class="lede">Live shows, festivals and whatever is on repeat. Most recent first.</p><div class="rail-wrap"><button class="rail-btn" type="button" id="rprev" aria-label="Scroll left">&#8249;</button><div class="rail" id="rail" tabindex="0" aria-label="Concerts, scroll sideways"><div class="strip"><figure class="pola"><div class="ph"><span class="soon" aria-hidden="true">SV</span></div><figcaption><span class="a">Sammy Virji</span><span class="d">Oct 2026</span><span class="v">San Diego</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/role-model.jpg" alt="Role Model concert photo" loading="lazy"></div><figcaption><span class="a">Role Model</span><span class="d">Oct 2026</span><span class="v">San Diego</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/harry-styles.jpg" alt="Harry Styles concert photo" loading="lazy"></div><figcaption><span class="a">Harry Styles</span><span class="d">Sep 2026</span><span class="v">Madison Square Garden · New York City</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/5sos.jpg" alt="5 Seconds of Summer concert photo" loading="lazy"></div><figcaption><span class="a">5 Seconds of Summer</span><span class="d">2026</span><span class="v">San Diego</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/dominic-fike.jpg" alt="Dominic Fike concert photo" loading="lazy"></div><figcaption><span class="a">Dominic Fike<em>Festival</em></span><span class="d">May 2026</span><span class="v">Sun God Festival · San Diego</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/sabrina-carpenter.jpg" alt="Sabrina Carpenter concert photo" loading="lazy"></div><figcaption><span class="a">Sabrina Carpenter</span><span class="d">Nov 2025</span><span class="v">Los Angeles</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/shawn-mendes.jpg" alt="Shawn Mendes concert photo" loading="lazy"></div><figcaption><span class="a">Shawn Mendes</span><span class="d">Oct 2025</span><span class="v">Los Angeles</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/the-weeknd.jpg" alt="The Weeknd concert photo" loading="lazy"></div><figcaption><span class="a">The Weeknd</span><span class="d">Jun 2025</span><span class="v">Los Angeles</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/coldplay.jpg" alt="Coldplay concert photo" loading="lazy"></div><figcaption><span class="a">Coldplay</span><span class="d">2025</span><span class="v">Stanford</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/disco-lines.jpg" alt="Disco Lines concert photo" loading="lazy"></div><figcaption><span class="a">Disco Lines<em>Festival</em></span><span class="d">2025</span><span class="v">Sun God Festival · San Diego</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/pitbull.jpg" alt="Pitbull concert photo" loading="lazy"></div><figcaption><span class="a">Pitbull</span><span class="d">2024</span><span class="v">San Diego</span></figcaption></figure><figure class="pola"><div class="ph"><img src="img/the-1975.jpg" alt="The 1975 concert photo" loading="lazy"></div><figcaption><span class="a">The 1975</span><span class="d">2023</span><span class="v">San Diego</span></figcaption></figure></div></div><button class="rail-btn" type="button" id="rnext" aria-label="Scroll right">&#8250;</button></div><p class="rail-hint">Swipe, drag or use the arrows <span aria-hidden="true">→</span></p><a class="more" href="music.html">Full page →</a></div></section><section class="feed" id="food"><div><h2>Food &amp; coffee</h2><p class="lede">Vegetarian home cook, and a devoted iced coffee drinker. My favorite order is an iced brown sugar shaken espresso.</p><p class="beli">Follow me on Beli <strong>@kavya3008</strong></p><br><a class="more" href="food.html">View full page →</a></div><div class="pics"><img src="img/coffee.png" alt="Iced coffee" loading="lazy"><img src="img/skillet.png" alt="Skillet with eggs" loading="lazy"><img src="img/noodles.png" alt="Noodles on chopsticks" loading="lazy"><img src="img/taco.png" alt="Taco Bell takeout sticker" loading="lazy"></div></section><section class="feed wide" id="places"><div><h2>Recent trips</h2><p class="lede">Where I’ve been lately, and what’s next. The rest of the trips are on the full page.</p><ol class="trips"><li class="trip next"><div class="tbody"><span class="when">Nov 2026</span><span class="badge">Next up</span><h3>Las Vegas</h3><p class="sub">Thanksgiving 2026</p><ul class="tags"><li>Upcoming</li></ul></div><div class="tphoto"><span class="soon"><b>Las Vegas</b><i>photo soon</i></span></div></li><li class="trip"><div class="tbody"><span class="when">Sep 2026</span><h3>New York City</h3><p class="sub">Labor Day weekend</p><p>The trip that came with a Harry Styles show. Central Park, bagels, Blank Street coffee, sunset, thrifting and shopping in SoHo.</p><ul class="tags"><li>Central Park</li><li>Bagels</li><li>Blank Street coffee</li><li>Harry, of course</li><li>Sunset</li><li>Thrifting</li><li>SoHo</li></ul></div><button class="tphoto multi" type="button" aria-label="Show next photo from New York City"><img src="img/trip-nyc-sept-1.jpg" alt="Times Square in New York City" loading="lazy" class="on"><img src="img/trip-nyc-sept-2.jpg" alt="Sunset over the Manhattan skyline" loading="lazy"><span class="count">1 / 2</span></button></li><li class="trip"><div class="tbody"><span class="when">Jun 2026</span><h3>Yosemite National Park</h3><p class="sub">With my parents</p><p>Mist Falls trail, Bridal Veil Falls and Glacier Point. So fun, but super hot, so don’t go in the summer.</p><ul class="tags"><li>Mist Falls trail</li><li>Bridal Veil Falls</li><li>Glacier Point</li><li>Family trip</li></ul></div><button class="tphoto multi" type="button" aria-label="Show next photo from Yosemite National Park"><img src="img/trip-yosemite-1.jpg" alt="Yosemite National Park" loading="lazy" class="on"><img src="img/trip-yosemite-2.jpg" alt="Bridalveil Fall at Yosemite" loading="lazy"><span class="count">1 / 2</span></button></li><li class="trip"><div class="tbody"><span class="when">Jun 2026</span><h3>Bay Area</h3><p class="sub">Family visit</p><p>Visiting family, which is always fun.</p><ul class="tags"><li>Family</li></ul></div><div class="tphoto"><img src="img/trip-bay-area.jpg" alt="Family time in the Bay Area" loading="lazy" class="on"></div></li></ol><a class="more" href="trips.html">View full page →</a></div></section><section class="feed" id="life"><div><h2>Little things</h2><p class="lede">Small things I like.</p></div><div class="pics"><img src="img/daisy.png" alt="Daisies" loading="lazy"><img src="img/lily.png" alt="Pink lily" loading="lazy"><img src="img/booth.png" alt="Photo booth strip" loading="lazy"></div></section></div><script>
 (function(){
 document.documentElement.classList.add("js");
 var secs=[].slice.call(document.querySelectorAll(".feed"));
 if(!("IntersectionObserver" in window)){secs.forEach(function(c){c.classList.add("in")});}
 else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});secs.forEach(function(c){io.observe(c)});}
+document.querySelectorAll(".tphoto.multi").forEach(function(b){var im=b.querySelectorAll("img"),c=b.querySelector(".count"),i=0;
+ b.addEventListener("click",function(){im[i].classList.remove("on");i=(i+1)%im.length;im[i].classList.add("on");c.textContent=(i+1)+" / "+im.length})});
+var rail=document.getElementById("rail");
+if(rail){
+ var step=function(){var c=rail.querySelector(".pola");return (c?c.offsetWidth:240)*2.2};
+ document.getElementById("rprev").onclick=function(){rail.scrollBy({left:-step(),behavior:"smooth"})};
+ document.getElementById("rnext").onclick=function(){rail.scrollBy({left:step(),behavior:"smooth"})};
+ var down=false,sx=0,sl=0,moved=false;
+ rail.addEventListener("pointerdown",function(e){if(e.pointerType!=="mouse")return;down=true;moved=false;sx=e.clientX;sl=rail.scrollLeft});
+ window.addEventListener("pointermove",function(e){if(!down)return;var d=e.clientX-sx;if(Math.abs(d)>4){moved=true;rail.classList.add("drag")}if(moved)rail.scrollLeft=sl-d});
+ window.addEventListener("pointerup",function(){down=false;rail.classList.remove("drag")});
+}
 var links=[].slice.call(document.querySelectorAll(".chips a"));
 function spy(){var y=window.scrollY+160,cur=0;secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle("on",i===cur&&window.scrollY>200)})}
 window.addEventListener("scroll",spy,{passive:true});spy();
