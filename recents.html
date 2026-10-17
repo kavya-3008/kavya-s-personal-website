@@ -54,6 +54,32 @@ h2.sec{margin:3.5rem 0 0;font:400 clamp(1.8rem,3.6vw,2.6rem)/1 var(--font-serif)
 .contact-list .v{font:400 clamp(1.3rem,2.6vw,1.9rem)/1.2 var(--font-serif);overflow-wrap:anywhere}
 .copy{border:1px solid var(--green-line);background:transparent;color:var(--cream);border-radius:999px;padding:.35rem .9rem;font-size:.85rem}
 .copy:hover{background:var(--cream);color:var(--ink)}
+.chips{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem;padding:.8rem 0;background:linear-gradient(var(--green-deep) 70%,transparent)}
+.chips a{text-decoration:none;font-size:.9rem;font-weight:500;border:1px solid var(--green-line);border-radius:999px;padding:.3em 1em;color:var(--cream-dim);transition:background .2s,color .2s}
+.chips a:hover{color:var(--cream);border-color:var(--cream)}
+.chips a.on{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.feed{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:2rem clamp(24px,5vw,72px);align-items:start;padding:clamp(40px,7vw,88px) 0;border-bottom:1px solid var(--green-line);scroll-margin-top:64px}
+.feed:first-of-type{padding-top:1.5rem}
+.feed h2{margin:0 0 .3em;font:400 clamp(2.6rem,7vw,5.6rem)/.95 var(--font-serif);letter-spacing:-.01em;text-wrap:balance}
+.feed .lede{margin:0 0 1.4rem}
+.feed .more{display:inline-block;margin-top:1rem;color:var(--amber);font-weight:500;text-decoration:none}
+.feed .more:hover{text-decoration:underline}
+.feed .row{grid-template-columns:minmax(0,1fr);padding:1.1rem 0}
+.entry{padding:1.1rem 0;border-top:1px solid var(--green-line);max-width:56ch}
+.entry h3{margin:0;font:500 1.2rem/1.25 var(--font-display)}
+.entry .when{display:block;margin:.15rem 0 .4rem;color:var(--amber);font-weight:500;font-size:.9rem}
+.entry p{margin:0;color:var(--cream-dim)}
+.pics{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:1rem;align-items:center;justify-items:center;position:sticky;top:76px}
+.pics img{display:block;width:100%;max-width:150px;max-height:170px;object-fit:contain;transform:rotate(var(--rot,-2deg));filter:drop-shadow(0 10px 16px rgba(0,0,0,.5));transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.pics img:hover{transform:rotate(0) scale(1.12);position:relative;z-index:2}
+.pics img:nth-child(3n+2){--rot:3deg}.pics img:nth-child(3n){--rot:-4deg}.pics img:nth-child(4n){--rot:1.5deg}
+@media (max-width:760px){
+  .feed{grid-template-columns:minmax(0,1fr)}
+  .pics{position:static;grid-template-columns:repeat(auto-fill,minmax(90px,1fr))}
+}
+.js .feed .pics img,.js .feed>div>*{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .8s cubic-bezier(.16,.84,.26,1)}
+.js .feed.in .pics img,.js .feed.in>div>*{opacity:1;transform:rotate(var(--rot,0deg))}
+.js .feed.in .pics img:hover{transform:rotate(0) scale(1.12)}
 .empty{color:var(--cream-dim);font-style:italic}
 /* item pages */
 .item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
@@ -72,4 +98,14 @@ dt{font-weight:600}dd{margin:0;color:var(--cream-dim)}
   .arch{max-width:260px}
   .contact-list li{grid-template-columns:minmax(0,1fr) auto}.contact-list .k{grid-column:1/-1}
 }
-</style></head><body><div class="pg"><nav class="nav" aria-label="Main"><a href="index.html#home">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="recents.html" aria-current="page">Recents</a><a href="contact.html">Contact</a></nav><h1 class="title">Recents</h1><p class="lede">What I have been up to lately. Each entry below is sample text that will be replaced with your real updates.</p><div class="row"><div class="when">Oct 2026</div><div><h3>[Recent update]</h3><p class="org">[Work]</p><p>Sample text. Replace with something recent: a project shipped, a role started or an award.</p><ul class="tags"><li>[Work]</li></ul></div></div><div class="row"><div class="when">Sep 2026</div><div><h3>[Recent update]</h3><p class="org">[Life]</p><p>Sample text. Replace with something recent outside of work, like a trip, a show or a new favorite.</p><ul class="tags"><li>[Life]</li></ul></div></div><div class="row"><div class="when">Sep 2026</div><div><h3>Harry Styles at Madison Square Garden</h3><p class="org">Life</p><p>Night 5 of the New York run on September 4, 2026, with Jamie xx as the special guest.</p><ul class="tags"><li>Concerts</li></ul></div></div><div class="row"><div class="when">Mar 2026</div><div><h3>Central Park</h3><p class="org">Life</p><p>A March afternoon in New York, with the polaroid to prove it.</p><ul class="tags"><li>Travel</li></ul></div></div></div></body></html>
+</style></head><body><div class="pg"><nav class="nav" aria-label="Main"><a href="index.html#home">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="recents.html" aria-current="page">Recents</a><a href="contact.html">Contact</a></nav><h1 class="title">Recents</h1><p class="lede">What I’ve been up to lately. Scroll, or jump to a section.</p><nav class="chips" aria-label="Sections"><a href="#concerts">Concerts &amp; music</a><a href="#food">Food &amp; coffee</a><a href="#places">Places</a><a href="#life">Little things</a></nav><section class="feed" id="concerts"><div><h2>Concerts &amp; music</h2><p class="lede">Live shows, records and whatever is on repeat.</p><div class="entry"><h3>Harry Styles at Madison Square Garden</h3><span class="when">Sep 4, 2026</span><p>Night 5 of the New York run, with Jamie xx as the special guest.</p></div><a class="more" href="music.html">Full page →</a></div><div class="pics"><img src="img/harry-ticket.png" alt="Harry Styles ticket" loading="lazy"><img src="img/record.png" alt="Vinyl record" loading="lazy"></div></section><section class="feed" id="food"><div><h2>Food &amp; coffee</h2><p class="lede">Things I cook, order and queue for.</p><a class="more" href="food.html">Full page →</a></div><div class="pics"><img src="img/coffee.png" alt="Iced coffee" loading="lazy"><img src="img/skillet.png" alt="Skillet with eggs" loading="lazy"><img src="img/noodles.png" alt="Noodles on chopsticks" loading="lazy"><img src="img/taco.png" alt="Taco Bell takeout sticker" loading="lazy"></div></section><section class="feed" id="places"><div><h2>Places</h2><p class="lede">Recent trips and places I keep going back to.</p><div class="entry"><h3>Central Park</h3><span class="when">Mar 2026</span><p>A March afternoon in New York, with the polaroid to prove it.</p></div></div><div class="pics"><img src="img/polaroid.png" alt="Central Park polaroid" loading="lazy"><img src="img/ny-booth.png" alt="New York photo booth strips" loading="lazy"><img src="img/la-jolla.png" alt="La Jolla postcard" loading="lazy"></div></section><section class="feed" id="life"><div><h2>Little things</h2><p class="lede">Small things I like.</p></div><div class="pics"><img src="img/daisy.png" alt="Daisies" loading="lazy"><img src="img/lily.png" alt="Pink lily" loading="lazy"><img src="img/booth.png" alt="Photo booth strip" loading="lazy"></div></section></div><script>
+(function(){
+document.documentElement.classList.add("js");
+var secs=[].slice.call(document.querySelectorAll(".feed"));
+if(!("IntersectionObserver" in window)){secs.forEach(function(c){c.classList.add("in")});}
+else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});secs.forEach(function(c){io.observe(c)});}
+var links=[].slice.call(document.querySelectorAll(".chips a"));
+function spy(){var y=window.scrollY+160,cur=0;secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle("on",i===cur&&window.scrollY>200)})}
+window.addEventListener("scroll",spy,{passive:true});spy();
+})();
+</script></body></html>

@@ -84,6 +84,21 @@ body{margin:0;background:var(--green-deep);color:var(--cream);font-family:var(--
   .palm{display:none}
 }
 
+@view-transition{navigation:auto}
+::view-transition-group(portrait){animation-duration:.95s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.7s}
+.arch-link{display:flex;justify-content:center;width:100%;text-decoration:none;color:inherit;cursor:pointer;position:relative}
+.arch-link .arch{view-transition-name:portrait;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.arch-link:hover .arch,.arch-link:focus-visible .arch{transform:scale(1.04)}
+.arch-link .pill{position:absolute;left:50%;bottom:14px;z-index:2}
+.arch-link .arch{position:relative}
+.arch-link:hover .pill,.arch-link:focus-visible .pill{opacity:1;transform:translate(-50%,0)}
+/* leaving: scrapbook pieces fly back out before the portrait glides to the About page */
+#home.leaving .piece,#home.settled.leaving .piece{opacity:0;pointer-events:none;
+  transform:translate(var(--fx),var(--fy)) scale(.7) rotate(calc(var(--rot)*3));
+  transition:opacity .55s ease calc(var(--i)*.03s),transform .8s cubic-bezier(.5,0,.75,.4) calc(var(--i)*.03s)}
+#home.leaving .palm,#home.settled.leaving .palm{opacity:0;transform:translateX(30vw);transition:opacity .5s ease,transform .8s cubic-bezier(.5,0,.75,.4)}
+#home.leaving .title,#home.leaving .hint{opacity:0;transition:opacity .35s ease}
 </style></head><body>
 
 <main id="home">
@@ -91,8 +106,8 @@ body{margin:0;background:var(--green-deep);color:var(--cream);font-family:var(--
   <nav class="nav" aria-label="Main"><a href="index.html#home" aria-current="page">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="recents.html">Recents</a><a href="contact.html">Contact</a></nav>
   <div class="collage">
     <div class="centerpiece">
-      <div class="arch"><div class="ph" aria-hidden="true">KS</div>
-        <img src="img/portrait.jpg" alt="Portrait of Kavya Shah" onerror="this.remove()"></div>
+      <a class="arch-link" id="about-link" href="about.html" aria-label="About Kavya"><div class="arch"><div class="ph" aria-hidden="true">KS</div>
+        <img src="img/portrait.jpg" alt="Portrait of Kavya Shah" onerror="this.remove()"><span class="pill">About me <b aria-hidden="true">→</b></span></div></a>
       <h1 class="title">Kavya Shah</h1>
       <p class="hint">Go ahead, poke around</p>
     </div>
@@ -106,6 +121,15 @@ body{margin:0;background:var(--green-deep);color:var(--cream);font-family:var(--
   var h=document.getElementById('home');
   requestAnimationFrame(function(){requestAnimationFrame(function(){h.classList.add('opened');});});
   setTimeout(function(){h.classList.add('settled');},3600);
+  var going=false;
+  function goAbout(e){
+    if(going||e.metaKey||e.ctrlKey||e.shiftKey||e.button>0)return;
+    e.preventDefault();going=true;h.classList.add('leaving');
+    setTimeout(function(){location.href='about.html';},window.matchMedia('(prefers-reduced-motion:reduce)').matches?0:800);
+  }
+  document.getElementById('about-link').addEventListener('click',goAbout);
+  document.querySelector('.nav a[href="about.html"]').addEventListener('click',goAbout);
+  window.addEventListener('pageshow',function(e){if(e.persisted){going=false;h.classList.remove('leaving');}});
 })();
 </script>
 </body></html>
