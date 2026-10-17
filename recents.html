@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Recents · Kavya Shah</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"><style>
+:root{
+  --green-deep:#0A1C15; --green:#0F2A21; --green-mid:#1E4A3A; --green-line:rgba(246,235,211,.18);
+  --cream:#F6EBD3; --cream-dim:rgba(246,235,211,.72);
+  --orange:#E8532B; --amber:#F3B544; --ink:#0F2E24;
+  --font-serif:"Instrument Serif","Times New Roman",serif;
+  --font-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gutter:max(16px,env(safe-area-inset-left,0px));
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.nav{display:grid;grid-template-columns:repeat(5,1fr);align-items:center;text-align:center;
+  font:400 clamp(1.1rem,2.3vw,2.1rem)/1 var(--font-serif);text-transform:uppercase;letter-spacing:.02em;color:var(--cream)}
+.nav a{text-decoration:none;padding:.4em .2em;justify-self:center}
+.nav a:hover,.nav a[aria-current=page]{text-decoration:underline wavy var(--orange);text-decoration-thickness:2px;text-underline-offset:.22em;text-decoration-skip-ink:none}
+.noise{position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+@media (max-width:640px){.nav{font-size:1.05rem}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01s!important;transition-delay:0s!important}html{scroll-behavior:auto}}
+
+body{margin:0;min-height:100vh;background:var(--green-deep);color:var(--cream);font:400 1.05rem/1.6 var(--font-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.pg{position:relative;max-width:1100px;margin:0 auto;padding-block:20px 80px}
+.pg::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 60% 50% at 50% 30%,var(--green-mid) 0%,var(--green) 55%,var(--green-deep) 100%)}
+.pg .nav{margin-bottom:clamp(36px,7vw,80px)}
+h1.title{margin:0 0 .3em;font:400 clamp(3.2rem,10vw,7.5rem)/.92 var(--font-serif);letter-spacing:-.01em;text-wrap:balance}
+.lede{max-width:52ch;color:var(--cream-dim);margin:0 0 3rem}
+h2.sec{margin:3.5rem 0 0;font:400 clamp(1.8rem,3.6vw,2.6rem)/1 var(--font-serif);padding-bottom:.6rem;border-bottom:1px solid var(--green-line)}
+.row{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr);gap:.4rem clamp(16px,4vw,48px);padding:1.6rem 0;border-bottom:1px solid var(--green-line)}
+.row .when{color:var(--cream-dim);font-size:.95rem;font-variant-numeric:tabular-nums}
+.row h3{margin:0;font:500 1.35rem/1.25 var(--font-display);letter-spacing:-.01em}
+.row .org{margin:.15rem 0 .7rem;color:var(--amber);font-weight:500}
+.row p{margin:0 0 .8rem;max-width:62ch;color:var(--cream-dim)}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin:0;padding:0;list-style:none}
+.tags li{font-size:.82rem;border:1px solid var(--green-line);border-radius:999px;padding:.2em .8em}
+.btn{display:inline-flex;align-items:center;gap:.7rem;border-radius:999px;background:var(--orange);color:#fff;text-decoration:none;
+  font-weight:600;padding:.7rem 1.4rem;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;border:1.5px solid var(--cream);color:var(--cream)}
+.note{font-size:.85rem;color:var(--cream-dim);border:1px dashed var(--green-line);border-radius:10px;padding:.7rem 1rem;margin:0 0 2rem;max-width:62ch}
+.two{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.arch{position:relative;aspect-ratio:3/4;border-radius:999px 999px 24px 24px;overflow:hidden;border:5px solid var(--cream);
+  background:linear-gradient(160deg,#F7C877,#E8863F 60%,#C75B2C);box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.arch .ph{position:absolute;inset:0;display:grid;place-items:center;font:400 5rem/1 var(--font-serif);color:var(--cream)}
+.arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.contact-list{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.contact-list li{display:grid;grid-template-columns:minmax(100px,170px) minmax(0,1fr) auto;gap:1rem;align-items:center;padding:1.2rem 0;border-bottom:1px solid var(--green-line)}
+.contact-list .k{color:var(--cream-dim)}
+.contact-list .v{font:400 clamp(1.3rem,2.6vw,1.9rem)/1.2 var(--font-serif);overflow-wrap:anywhere}
+.copy{border:1px solid var(--green-line);background:transparent;color:var(--cream);border-radius:999px;padding:.35rem .9rem;font-size:.85rem}
+.copy:hover{background:var(--cream);color:var(--ink)}
+.empty{color:var(--cream-dim);font-style:italic}
+/* item pages */
+.item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.item .fig{position:sticky;top:24px;display:flex;justify-content:center;padding:clamp(10px,3vw,30px)}
+.item .fig img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;transform:rotate(-1.5deg);filter:drop-shadow(0 22px 34px rgba(0,0,0,.55))}
+.cat{display:inline-block;background:var(--amber);color:var(--ink);font-weight:600;font-size:.8rem;padding:.3em .9em;border-radius:999px;margin:0 0 1rem}
+.item h1{margin:0 0 1.2rem;font:400 clamp(2.4rem,5.5vw,4.4rem)/.98 var(--font-serif);text-wrap:balance}
+.item p{margin:0 0 1rem;max-width:56ch;color:var(--cream-dim)}
+dl{margin:2rem 0 0;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.7rem 1.4rem;background:rgba(246,235,211,.07);border:1px solid var(--green-line);border-radius:14px;padding:1.2rem 1.4rem}
+dt{font-weight:600}dd{margin:0;color:var(--cream-dim)}
+.pn{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:2.4rem}
+@media (max-width:760px){
+  .row{grid-template-columns:minmax(0,1fr)}
+  .two,.item{grid-template-columns:minmax(0,1fr)}
+  .item .fig{position:static}.item .fig img{max-height:60vh}
+  .arch{max-width:260px}
+  .contact-list li{grid-template-columns:minmax(0,1fr) auto}.contact-list .k{grid-column:1/-1}
+}
+</style></head><body><div class="pg"><nav class="nav" aria-label="Main"><a href="index.html#home">Home</a><a href="work.html">Work</a><a href="about.html">About</a><a href="recents.html" aria-current="page">Recents</a><a href="contact.html">Contact</a></nav><h1 class="title">Recents</h1><p class="lede">What I have been up to lately. Each entry below is sample text that will be replaced with your real updates.</p><div class="row"><div class="when">Oct 2026</div><div><h3>[Recent update]</h3><p class="org">[Work]</p><p>Sample text. Replace with something recent: a project shipped, a role started or an award.</p><ul class="tags"><li>[Work]</li></ul></div></div><div class="row"><div class="when">Sep 2026</div><div><h3>[Recent update]</h3><p class="org">[Life]</p><p>Sample text. Replace with something recent outside of work, like a trip, a show or a new favorite.</p><ul class="tags"><li>[Life]</li></ul></div></div><div class="row"><div class="when">Sep 2026</div><div><h3>Harry Styles at Madison Square Garden</h3><p class="org">Life</p><p>Night 5 of the New York run on September 4, 2026, with Jamie xx as the special guest.</p><ul class="tags"><li>Concerts</li></ul></div></div><div class="row"><div class="when">Mar 2026</div><div><h3>Central Park</h3><p class="org">Life</p><p>A March afternoon in New York, with the polaroid to prove it.</p><ul class="tags"><li>Travel</li></ul></div></div></div></body></html>
